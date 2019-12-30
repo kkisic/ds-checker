@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <AreaList :areas="areas" :missions="missions" />
   </div>
 </template>
+
+<script>
+import AreaList from "./components/AreaList";
+
+import area from "./assets/area.json";
+import missions from "./assets/missions.json";
+
+export default {
+  name: "App",
+  components: {
+    AreaList
+  },
+  data() {
+    return {
+      areas: area.data,
+      missions: missions.missions
+    };
+  }
+};
+</script>
 
 <style>
 #app {
