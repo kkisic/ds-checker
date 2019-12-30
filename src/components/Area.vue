@@ -5,10 +5,12 @@
     </span>
     <div class="row row-cols-5">
       <div class="col" v-for="id of this.range" :key="id">
-        <p>No.{{ id }}</p>
-        <p>
-          {{ missions[id].status }}
-        </p>
+        <div :class="missions[id].status">
+          <p>No.{{ id }}</p>
+          <p>
+            {{ missions[id].status }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -37,4 +39,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.done {
+  background: limegreen;
+}
+
+.notStarted {
+  background: lightgray;
+}
+
+.inProgress {
+  background: red;
+}
+</style>
