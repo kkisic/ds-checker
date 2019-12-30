@@ -1,15 +1,32 @@
 <template>
   <div>
-    <span>
+    <span class="lead">
       {{ area.name }}
     </span>
     <div class="row row-cols-5">
-      <div class="col" v-for="id of this.range" :key="id">
-        <div :class="missions[id].status">
-          <p>No.{{ id }}</p>
-          <p>
+      <div
+        class="col"
+        v-for="id of this.range"
+        :key="id"
+        :class="missions[id].status"
+      >
+        <p>No.{{ id }}</p>
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownStatusButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
             {{ missions[id].status }}
-          </p>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownStatusButton">
+            <span class="dropdown-item"> Not Started </span>
+            <span class="dropdown-item"> In Progress </span>
+            <span class="dropdown-item"> Done </span>
+          </div>
         </div>
       </div>
     </div>
@@ -17,6 +34,7 @@
 </template>
 
 <script>
+import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
