@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <NavBar />
     <AreaList :areas="areas" :missions="missions" />
   </div>
 </template>
 
 <script>
+import NavBar from "./components/NavBar";
 import AreaList from "./components/AreaList";
 
 import area from "./assets/area.json";
@@ -13,6 +15,7 @@ import missions from "./assets/missions.json";
 export default {
   name: "App",
   components: {
+    NavBar,
     AreaList
   },
   data() {
