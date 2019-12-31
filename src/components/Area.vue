@@ -23,9 +23,24 @@
             {{ missions[id].status }}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownStatusButton">
-            <span class="dropdown-item"> Not Started </span>
-            <span class="dropdown-item"> In Progress </span>
-            <span class="dropdown-item"> Done </span>
+            <span
+              class="dropdown-item"
+              v-on:click="missions[id].status = 'notStarted'"
+            >
+              Not Started
+            </span>
+            <span
+              class="dropdown-item"
+              v-on:click="missions[id].status = 'inProgress'"
+            >
+              In Progress
+            </span>
+            <span
+              class="dropdown-item"
+              v-on:click="missions[id].status = 'done'"
+            >
+              Done
+            </span>
           </div>
         </div>
       </div>
@@ -53,6 +68,18 @@ export default {
       x => x + this.area.startMissionId
     );
     console.log(this.missions);
+  },
+  classByStatus(id) {
+    switch (this.missions[id].status) {
+      case "Not Started":
+        return "notStarted";
+      case "In Progress":
+        return "inProgress";
+      case "Done":
+        return "done";
+      default:
+        return "notStarted";
+    }
   }
 };
 </script>
