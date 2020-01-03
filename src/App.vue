@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar />
-    <AreaList :areas="areas" :missions="missions" />
+    <NavBar :missions="missions" />
+    <AreaList :areas="areas" :missions="missions" class="mt-5" />
   </div>
 </template>
 
