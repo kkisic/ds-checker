@@ -8,7 +8,7 @@
         class="col"
         v-for="id of this.range"
         :key="id"
-        :class="missions[id].status"
+        :class="classByStatus(id)"
       >
         <p>No.{{ id }}</p>
         <div class="dropdown">
@@ -25,19 +25,19 @@
           <div class="dropdown-menu" aria-labelledby="dropdownStatusButton">
             <span
               class="dropdown-item"
-              v-on:click="missions[id].status = 'notStarted'"
+              v-on:click="missions[id].status = 'Not Started'"
             >
               Not Started
             </span>
             <span
               class="dropdown-item"
-              v-on:click="missions[id].status = 'inProgress'"
+              v-on:click="missions[id].status = 'In Progress'"
             >
               In Progress
             </span>
             <span
               class="dropdown-item"
-              v-on:click="missions[id].status = 'done'"
+              v-on:click="missions[id].status = 'Done'"
             >
               Done
             </span>
@@ -56,6 +56,20 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 export default {
   name: "Area",
   props: ["area", "missions"],
+  methods: {
+    classByStatus: function(id) {
+      switch (this.missions[id].status) {
+        case "Not Started":
+          return "notStarted";
+        case "In Progress":
+          return "inProgress";
+        case "Done":
+          return "done";
+        default:
+          return "notStarted";
+      }
+    }
+  },
   data() {
     return {
       length: this.area.endMissionId - this.area.startMissionId + 1,
@@ -68,18 +82,6 @@ export default {
       x => x + this.area.startMissionId
     );
     console.log(this.missions);
-  },
-  classByStatus(id) {
-    switch (this.missions[id].status) {
-      case "Not Started":
-        return "notStarted";
-      case "In Progress":
-        return "inProgress";
-      case "Done":
-        return "done";
-      default:
-        return "notStarted";
-    }
   }
 };
 </script>
