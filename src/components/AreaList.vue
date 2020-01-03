@@ -17,9 +17,6 @@ export default {
   props: ["areas", "missions"],
   components: {
     Area
-  },
-  created() {
-    console.log(this.contents);
   }
 };
 </script>

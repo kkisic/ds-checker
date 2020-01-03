@@ -81,7 +81,6 @@ export default {
       Array(this.length).keys(),
       x => x + this.area.startMissionId
     );
-    console.log(this.missions);
   }
 };
 </script>

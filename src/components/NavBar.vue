@@ -31,6 +31,9 @@
 </template>
 
 <script>
+import fs from "fs";
+import output from "@/assets/missions.json";
+
 export default {
   name: "Navbar",
   props: ["missions"],
@@ -48,6 +51,10 @@ export default {
     changeStatuses: function(input, status) {
       const ids = this.parseId(input);
       ids.forEach(id => (this.missions[id].status = status));
+      this.updateJson();
+    },
+    updateJson: function() {
+      fs.writeFileSync(output, JSON.stringify(this.missions));
     }
   }
 };
