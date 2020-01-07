@@ -1,27 +1,27 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex w-100" id="navbarSupportedContent">
       <input
-        class="form-control mr-sm-2"
+        class="form-control mr-sm-2 flex-fill"
         v-model="input"
         type="search"
         placeholder="101, 102, ..., etc"
         aria-label="Search"
       />
       <button
-        class="btn btn-success mr-sm-2"
+        class="btn btn-success mr-sm-2 flex-fill"
         v-on:click="changeStatuses(input, 'Done')"
       >
         Done
       </button>
       <button
-        class="btn btn-danger mr-sm-2"
+        class="btn btn-danger mr-sm-2 flex-fill"
         v-on:click="changeStatuses(input, 'In Progress')"
       >
         In Progress
       </button>
       <button
-        class="btn btn-secondary"
+        class="btn btn-secondary flex-fill"
         v-on:click="changeStatuses(input, 'Not Started')"
       >
         Not Started
