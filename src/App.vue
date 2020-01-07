@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import fs from "fs";
+
 import NavBar from "./components/NavBar";
 import AreaList from "./components/AreaList";
 
@@ -23,6 +25,14 @@ export default {
       areas: area.data,
       missions: missions.missions
     };
+  },
+  created() {
+    fs.readFile("./assets/missions.json", (err, data) => {
+      if (err != null){
+        return;
+      }
+      this.missions = JSON.parse(data);
+    })
   }
 };
 </script>
