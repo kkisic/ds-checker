@@ -36,7 +36,7 @@
       "id": 4,
       "name": "ポート・ノットシティ",
       "startMissionId": 145,
-      "endMissionId": 154,
+      "endMissionId": 155,
       "mission":[
       ]
     },
@@ -100,7 +100,7 @@
       "id": 12,
       "name": "カイラル・アーティストの母",
       "startMissionId": 255,
-      "endMissionId": 265,
+      "endMissionId": 266,
       "mission":[
       ]
     },
@@ -116,7 +116,7 @@
       "id": 14,
       "name": "ロボット工学者",
       "startMissionId": 285,
-      "endMissionId": 290,
+      "endMissionId": 291,
       "mission":[
       ]
     },
@@ -236,7 +236,7 @@
       "id": 29,
       "name": "K4南配送センター",
       "startMissionId": 445,
-      "endMissionId": 476,
+      "endMissionId": 477,
       "mission":[
       ]
     },
@@ -275,7 +275,7 @@
     {
       "id": 34,
       "name": "マウンテンノット",
-      "startMissionId": 548,
+      "startMissionId": 546,
       "endMissionId": 584,
       "mission":[
       ]
