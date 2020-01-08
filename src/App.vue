@@ -12,7 +12,9 @@ import NavBar from "./components/NavBar";
 import AreaList from "./components/AreaList";
 
 import area from "./assets/area.json";
-import missions from "./assets/missions.json";
+import defaultMissions from "./assets/defaultMissions.json";
+
+const rootDir = "./";
 
 export default {
   name: "App",
@@ -23,16 +25,27 @@ export default {
   data() {
     return {
       areas: area.data,
-      missions: missions.missions
+      missions: []
     };
   },
-  created() {
-    fs.readFile("./assets/missions.json", (err, data) => {
-      if (err != null){
-        return;
+  methods: {
+    readMissions: function() {
+      console.log(defaultMissions);
+      try {
+        const data = fs.readFileSync(rootDir + "missions.json", "utf8");
+        return JSON.parse(data).missions;
+      } catch {
+        return defaultMissions;
       }
-      this.missions = JSON.parse(data);
-    })
+    },
+    saveMissions: function() {
+      const data = JSON.stringify({ missions: this.missions });
+      fs.writeFileSync(rootDir + "missions.json", data);
+    }
+  },
+  created() {
+    this.missions = this.readMissions();
+    this.saveMissions();
   }
 };
 </script>
