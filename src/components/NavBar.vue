@@ -34,6 +34,11 @@
 export default {
   name: "Navbar",
   props: ["missions"],
+  data() {
+    return {
+      input: ""
+    };
+  },
   methods: {
     parseId: function(input) {
       const regex = /[^0-9,]/g;
