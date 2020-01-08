@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar :missions="missions" />
-    <AreaList :areas="areas" :missions="missions" class="mt-5" />
+    <NavBar :missions="missions" @save="saveMissions" />
+    <AreaList :areas="areas" :missions="missions" class="mt-5" @save="saveMissions" />
   </div>
 </template>
 
@@ -30,12 +30,11 @@ export default {
   },
   methods: {
     readMissions: function() {
-      console.log(defaultMissions);
       try {
         const data = fs.readFileSync(rootDir + "missions.json", "utf8");
         return JSON.parse(data).missions;
       } catch {
-        return defaultMissions;
+        return defaultMissions.missions;
       }
     },
     saveMissions: function() {

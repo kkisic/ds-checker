@@ -25,20 +25,17 @@
           <div class="dropdown-menu" aria-labelledby="dropdownStatusButton">
             <span
               class="dropdown-item"
-              v-on:click="missions[id].status = 'Not Started'"
+              @click="changeStatus(id, 'Not Started')"
             >
               Not Started
             </span>
             <span
               class="dropdown-item"
-              v-on:click="missions[id].status = 'In Progress'"
+              @click="changeStatus(id, 'In Progress')"
             >
               In Progress
             </span>
-            <span
-              class="dropdown-item"
-              v-on:click="missions[id].status = 'Done'"
-            >
+            <span class="dropdown-item" @click="changeStatus(id, 'Done')">
               Done
             </span>
           </div>
@@ -68,6 +65,10 @@ export default {
         default:
           return "notStarted";
       }
+    },
+    changeStatus: function(id, status) {
+      this.missions[id].status = status;
+      this.$emit("save");
     }
   },
   data() {

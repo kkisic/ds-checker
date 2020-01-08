@@ -5,6 +5,7 @@
       :key="id"
       :area="areas[id]"
       :missions="missions"
+      @save="emitParent"
     />
   </div>
 </template>
@@ -17,6 +18,11 @@ export default {
   props: ["areas", "missions"],
   components: {
     Area
+  },
+  methods: {
+    emitParent: function() {
+      this.$emit("save");
+    }
   }
 };
 </script>

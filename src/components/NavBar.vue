@@ -48,7 +48,7 @@ export default {
     changeStatuses: function(input, status) {
       const ids = this.parseId(input);
       ids.forEach(id => (this.missions[id].status = status));
-      //this.updateJson();
+      this.$emit("save");
     }
   }
 };
