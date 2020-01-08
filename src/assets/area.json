@@ -147,7 +147,7 @@
     {
       "id": 18,
       "name": "医者",
-      "startMissionId": 323,
+      "startMissionId": 322,
       "endMissionId": 333,
       "mission":[
       ]
@@ -187,7 +187,7 @@
     {
       "id": 23,
       "name": "映画監督",
-      "startMissionId": 378,
+      "startMissionId": 377,
       "endMissionId": 383,
       "mission":[
       ]
@@ -268,14 +268,14 @@
       "id": 33,
       "name": "K7北配送センター",
       "startMissionId": 517,
-      "endMissionId": 544,
+      "endMissionId": 545,
       "mission":[
       ]
     },
     {
       "id": 34,
       "name": "マウンテンノット",
-      "startMissionId": 550,
+      "startMissionId": 548,
       "endMissionId": 584,
       "mission":[
       ]
